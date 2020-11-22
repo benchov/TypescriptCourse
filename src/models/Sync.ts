@@ -1,7 +1,7 @@
 import axios, { AxiosPromise } from "axios";
 
 interface HasId {
-  id: number;
+  id?: number;
 }
 export class Sync<T extends HasId> {
   constructor(public rootUrl: string) {}
@@ -17,7 +17,8 @@ export class Sync<T extends HasId> {
       return axios.post(this.rootUrl, data);
     }
   }
-  delete(): AxiosPromise {
-    return axios.delete(`${this.rootUrl}/${this.get("id")}`);
+  delete(data: T): AxiosPromise {
+    const { id } = data;
+    return axios.delete(`${this.rootUrl}/${id}`);
   }
 }
