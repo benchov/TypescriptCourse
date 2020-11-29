@@ -1,7 +1,5 @@
 import { User } from "./models/User";
 
-const user = new User({ id: 3 });
-// user.delete();
+const user = new User({ name: "Francis" });
 
-user.set({ name: "Norm Fac", age: 43 });
-user.save();
+console.log(user.get("name"));
