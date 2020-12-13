@@ -1,9 +1,7 @@
-import { User } from "./models/User";
+import axios, { AxiosResponse } from "axios";
 
-const user = new User({ id: 1, name: "Lucsi Kutya", age: 13 });
+const rootUrl = "http://localhost:3000/users";
 
-user.on("save", () => {
-  console.log(user);
+axios.get(rootUrl).then((response: AxiosResponse) => {
+  console.log(response.data);
 });
-
-user.save();
