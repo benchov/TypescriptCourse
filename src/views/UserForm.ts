@@ -5,16 +5,25 @@ export class UserForm {
 
   onEventHandler(): { [key: string]: () => void } {
     return {
-      "click:button": this.onButtonClick,
+      "click:.test-click": this.onTestClick,
       "mouseenter:h1": this.onHoverHeader,
+      "mouseleave:h1": this.onLeaveHeader,
+      "click:.set-age": this.onSetAge,
     };
   }
 
+  onSetAge(): void {
+    console.log("Set Age was pressed");
+  }
   onHoverHeader(): void {
     console.log("H1 Hovered");
   }
 
-  onButtonClick(): void {
+  onLeaveHeader(): void {
+    console.log("H1 Leaved");
+  }
+
+  onTestClick(): void {
     console.log("Button Clicked");
   }
 
@@ -25,7 +34,8 @@ export class UserForm {
             <div>User Name: ${this.model.get("name")}</div>
             <div>User Age: ${this.model.get("age")}</div>
             <input />
-            <button>Click Me</button>
+            <button class='test-click'>Click Me</button>
+            <button class='set-age'>Set Random Age</button>
         </div>
      `;
   }
