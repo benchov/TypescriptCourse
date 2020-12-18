@@ -13,7 +13,7 @@ export class UserForm {
 
   onEventHandler(): { [key: string]: () => void } {
     return {
-      "click:.test-click": this.onTestClick,
+      "click:.change-name": this.onChangeName,
       "mouseenter:h1": this.onHoverHeader,
       "mouseleave:h1": this.onLeaveHeader,
       "click:.set-age": this.onSetAge,
@@ -32,8 +32,8 @@ export class UserForm {
     console.log("H1 Leaved");
   }
 
-  onTestClick(): void {
-    console.log("Button Clicked");
+  onChangeName(): void {
+    console.log("NameChanged");
   }
 
   template(): string {
@@ -43,7 +43,7 @@ export class UserForm {
             <div>User Name: ${this.model.get("name")}</div>
             <div>User Age: ${this.model.get("age")}</div>
             <input />
-            <button class='test-click'>Click Me</button>
+            <button class='change-name'>Change Name</button>
             <button class='set-age'>Set Random Age</button>
         </div>
      `;
