@@ -32,10 +32,13 @@ export class UserForm {
     console.log("H1 Leaved");
   }
 
-  onChangeName(): void {
-    console.log("NameChanged");
-  }
   onChangeName = (): void => {
+    const input = this.parent.querySelector("input");
+    if (input) {
+      const name = input.value;
+      this.model.set({ name });
+    }
+  };
 
   template(): string {
     return `
