@@ -35,6 +35,7 @@ export class UserForm {
   onChangeName(): void {
     console.log("NameChanged");
   }
+  onChangeName = (): void => {
 
   template(): string {
     return `
