@@ -12,8 +12,10 @@ export class UserEdit extends View<User, UserProps> {
   };
 
   onRender = (): void => {
-    new UserShow(this.regions.userShow, this.model).render();
-    new UserForm(this.regions.userForm, this.model).render();
+    const userShow = new UserShow(this.regions.userShow, this.model);
+    console.log("userShow", userShow.regions);
+    const userForm = new UserForm(this.regions.userForm, this.model);
+    // console.log("userForm", userForm);
   };
 
   template = (): string => {
