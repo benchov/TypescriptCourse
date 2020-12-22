@@ -21,13 +21,13 @@ export class UserForm extends View<User, UserProps> {
     this.model.setRandomAge();
   };
 
-  onHoverHeader(): void {
+  onHoverHeader = (): void => {
     console.log("H1 Hovered");
-  }
+  };
 
-  onLeaveHeader(): void {
+  onLeaveHeader = (): void => {
     console.log("H1 Leaved");
-  }
+  };
 
   onChangeName = (): void => {
     const input = this.parent.querySelector("input");
@@ -37,7 +37,7 @@ export class UserForm extends View<User, UserProps> {
     }
   };
 
-  template(): string {
+  template = (): string => {
     return `
         <div>
             <input placeholder="${this.model.get("name")}"/>
@@ -46,5 +46,5 @@ export class UserForm extends View<User, UserProps> {
             <button class='save-form'>Save</button>
         </div>
      `;
-  }
+  };
 }
