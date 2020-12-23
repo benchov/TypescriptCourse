@@ -3,3 +3,4 @@ node_modules
 yarn.lock
 dist
 yarn-error.log
+express_ts_integration/build/index.js
