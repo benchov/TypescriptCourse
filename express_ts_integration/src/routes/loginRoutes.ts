@@ -40,16 +40,21 @@ router.get("/", (req: RequestWithBody, res: Response) => {
     res.send(`
         <div>
             <p>You are logged in</p>
-            <a>Logout</a>
+            <a href='/logout'>Logout</a>
         </div>
       `);
   } else {
     res.send(`
     <div>
         <p>You are not logged in</p>
-        <a>Login</a>
+        <a href='/login'>Login</a>
     </div>
   `);
   }
+});
+
+router.get("/logout", (req: RequestWithBody, res: Response) => {
+  req.session = undefined;
+  res.redirect("/");
 });
 export { router };
